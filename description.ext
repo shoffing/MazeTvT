@@ -26,7 +26,7 @@ class Header
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 onLoadName = "Nuke Maze v0.1";
-onLoadMission = "Kill the other teams, get their codes, then defuse the bomb!";
+onLoadMission = "Kill the other teams, get their cell phones, then defuse the bomb!";
 author = "shoffing";
 loadScreen = "maze.jpg";
 
@@ -157,56 +157,56 @@ class Params
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // WARNING: DO NOT DISABLE THIS COMPONENT
 
-    class f_param_debugMode
-    {
-            title = "$STR_f_param_debugMode";
-            values[] = {0,1};
-            texts[] = {"Off","On"};
-            default = 0;
-            code = "f_var_debugMode = %1";
-    };
+	class f_param_debugMode
+	{
+			title = "$STR_f_param_debugMode";
+			values[] = {0,1};
+			texts[] = {"Off","On"};
+			default = 0;
+			code = "f_var_debugMode = %1";
+	};
 
 // ============================================================================================
 
 // F3 - Folk Assign Gear Script
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-    class f_param_backpacks
-    {
-            title = "$STR_f_param_loadouts";
-            values[] = {0,1,2};
-            texts[] = {"Light","Medium","Heavy"};
-            default = 1;
-            code = "f_param_backpacks = %1";
-    };
+	class f_param_backpacks
+	{
+			title = "$STR_f_param_loadouts";
+			values[] = {0,1,2};
+			texts[] = {"Light","Medium","Heavy"};
+			default = 1;
+			code = "f_param_backpacks = %1";
+	};
 
 // ============================================================================================
 
 // F3 - Radio Systems Support
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-    class f_param_radios
-    {
-            title = "Radio System";
-            values[] = {0,1,2,3};
-            texts[] = {"Off","ACRE","TFR","ACRE2"};
-            default = 2;
-            code = "f_var_radios = %1";
-    };
+	class f_param_radios
+	{
+			title = "Radio System";
+			values[] = {0,1,2,3};
+			texts[] = {"Off","ACRE","TFR","ACRE2"};
+			default = 2;
+			code = "f_var_radios = %1";
+	};
 
 // ============================================================================================
 
 // F3 - Medical Systems Support
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-    class f_param_medical
-    {
-            title = "Medical System";
-            values[] = {0,1,2,3};
-            texts[] = {"Arma 3 Default (Autodetect)","F3 Simple Wounding System","Force ACE3 Simple","Force ACE3 Advanced"};
-            default = 2;
-            code = "f_var_medical = %1";
-    };
+	class f_param_medical
+	{
+			title = "Medical System";
+			values[] = {0,1,2,3};
+			texts[] = {"Arma 3 Default (Autodetect)","F3 Simple Wounding System","Force ACE3 Simple","Force ACE3 Advanced"};
+			default = 2;
+			code = "f_var_medical = %1";
+	};
 
 // F3 - ACE3 Support
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
@@ -228,14 +228,14 @@ class Params
 // F3 - Mission Timer/Safe Start
 // Credits: Please see the F2 online manual (http://www.ferstaberinde.com/f3/en/)
 
-    class f_param_mission_timer
-    {
-            title = "$STR_f_param_mission_timer";
-            values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
-            texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-            default = 2;
-            code = "f_param_mission_timer = %1";
-    };
+	class f_param_mission_timer
+	{
+			title = "$STR_f_param_mission_timer";
+			values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
+			texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
+			default = 0;
+			code = "f_param_mission_timer = %1";
+	};
 
 // ============================================================================================
 
@@ -264,15 +264,15 @@ class Params
 		code = "f_param_fog = %1";
 	};
 
-    class f_param_timeOfDay
+	class f_param_timeOfDay
 	{
 		title = "$STR_f_param_timeOfDay";
 		values[] = {0,1,2,3,4,5,6,7};
 		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
 		default = 3;
 		function = "f_fnc_setTime";			// This function is called to apply the values
- 		isGlobal = 0;						// Execute this only on the server
- 		code = "f_param_timeOfDay = %1";
+		isGlobal = 0;						// Execute this only on the server
+		code = "f_param_timeOfDay = %1";
 	};
 */
 // ============================================================================================
@@ -336,7 +336,7 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "The nuke was defused!";
 		subtitle = "";
 		description = "Please post to the AAR thread!";
 		// pictureBackground = "";
@@ -346,8 +346,8 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
-		subtitle = "";
+		title = "The nuke detonated, everybody loses!";
+		subtitle = "(except for the minotaur, I guess)";
 		description = "Please post to the AAR thread!";
 		// pictureBackground = "";
 		// picture = "";
@@ -504,6 +504,11 @@ class CfgFunctions
 			class SetLocalFTMemberMarkers{};
 			class GetMarkerColor{};
 			class LocalFTMarkerSync{};
+		};
+		class bodyRemoval
+		{
+			file = "f\removeBody";
+			class removeBody{};
 		};
 		class setAISkill
 		{
