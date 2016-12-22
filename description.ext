@@ -25,7 +25,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "Nuke Maze v0.1";
+onLoadName = "Legends of the Hidden Temple v0.1";
 onLoadMission = "Kill the other teams, get their cell phones, then defuse the bomb!";
 author = "shoffing";
 loadScreen = "maze.jpg";
@@ -236,6 +236,27 @@ class Params
 			default = 0;
 			code = "f_param_mission_timer = %1";
 	};
+
+
+
+	class maze_size_width
+	{
+		title = "Maze Width";
+		values[] = {5,10,15,20,25,30,35,40,45,50};
+		texts[] = {"5","10","15","20","25","30","35","40","45","50"};
+		default = 20;
+		code = "param_maze_width = %1";
+	};
+
+	class maze_size_height
+	{
+		title = "Maze Height";
+		values[] = {5,10,15,20,25,30,35,40,45,50};
+		texts[] = {"5","10","15","20","25","30","35","40","45","50"};
+		default = 20;
+		code = "param_maze_height = %1";
+	};
+
 
 // ============================================================================================
 

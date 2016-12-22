@@ -1,8 +1,10 @@
 if (isServer) then {
     
 
-WIDTH = 20;
-HEIGHT = 20;
+WIDTH = "maze_size_width" call BIS_fnc_getParamValue;
+if (WIDTH == 0) then { WIDTH = 20; };
+HEIGHT = "maze_size_height" call BIS_fnc_getParamValue;
+if (HEIGHT == 0) then { HEIGHT = 20; };
 
 // Get maze pos info
 mazePosCenter = getPosASL maze;
@@ -352,7 +354,9 @@ _mazeArea setMarkerBrush "Grid";
 
 
 // Clean up misc spawn area stuff
-doCleanup = true;
+{
+    deleteVehicle _x;
+} forEach nearestObjects [cleanup, [], 200];
 
 
 };

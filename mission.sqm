@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2;
+		nextID=4;
 	};
 	class Camera
 	{
-		pos[]={62.348557,84.220314,-141.85277};
-		dir[]={-0.64822865,-0.43225169,0.62692255};
-		up[]={-0.31072149,0.90174454,0.30051038};
-		aside[]={0.69521862,-2.9336661e-007,0.71884722};
+		pos[]={297.83963,218.62596,36.392403};
+		dir[]={0.40943834,-0.38472697,-0.82731086};
+		up[]={0.17065783,0.92301875,-0.34483403};
+		aside[]={-0.89628875,-6.579794e-007,-0.44357693};
 	};
 };
 binarizationWanted=0;
@@ -3324,7 +3324,7 @@ class Mission
 					};
 					id=247;
 					type="C_Man_casual_3_F";
-					atlOffset=-1.9073486e-006;
+					atlOffset=-3.8146973e-006;
 				};
 				class Item7
 				{
@@ -4909,27 +4909,12 @@ class Mission
 		};
 		class Item101
 		{
-			dataType="Trigger";
-			position[]={-2.5899999,26.71533,-23.99};
-			class Attributes
-			{
-				name="cleanup";
-				condition="doCleanup;";
-				onActivation="{ deleteVehicle _x } forEach thisList;";
-				sizeA=200;
-				sizeB=200;
-			};
-			id=408;
-			type="EmptyDetector";
-		};
-		class Item102
-		{
 			dataType="Layer";
 			name="Camp Ant";
 			id=445;
 			atlOffset=-26.799999;
 		};
-		class Item103
+		class Item102
 		{
 			dataType="Layer";
 			name="Camp Audacity";
@@ -4979,7 +4964,7 @@ class Mission
 			};
 			id=502;
 		};
-		class Item104
+		class Item103
 		{
 			dataType="Trigger";
 			position[]={-128.68932,28.423298,49.149624};
@@ -4993,7 +4978,7 @@ class Mission
 			type="EmptyDetector";
 			atlOffset=-0.042423248;
 		};
-		class Item105
+		class Item104
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5008,6 +4993,21 @@ class Mission
 			};
 			id=505;
 			type="CUP_b_craet2";
+		};
+		class Item105
+		{
+			dataType="Trigger";
+			position[]={-2.5899999,26.71533,-23.99};
+			class Attributes
+			{
+				name="cleanup";
+				condition="doCleanup;";
+				onActivation="{ deleteVehicle _x } forEach thisList;";
+				sizeA=200;
+				sizeB=200;
+			};
+			id=408;
+			type="EmptyDetector";
 		};
 	};
 	class Connections
