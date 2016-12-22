@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4;
+		nextID=6;
 	};
 	class Camera
 	{
-		pos[]={297.83963,218.62596,36.392403};
-		dir[]={0.40943834,-0.38472697,-0.82731086};
-		up[]={0.17065783,0.92301875,-0.34483403};
-		aside[]={-0.89628875,-6.579794e-007,-0.44357693};
+		pos[]={-9.631628,30.670244,101.33714};
+		dir[]={-0.68223232,-0.50670809,0.52730572};
+		up[]={-0.40097275,0.86207104,0.30991822};
+		aside[]={0.61160505,-1.2525124e-006,0.79130262};
 	};
 };
 binarizationWanted=0;
@@ -2434,6 +2434,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="group2 = group this;";
 						name="team2_lead";
 						description="Team Leader (Blue Barracudas)";
 						isPlayable=1;
@@ -2477,6 +2478,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group2 = group this;";
 						name="team2_1";
 						description="Contestant (Blue Barracudas)";
 						isPlayable=1;
@@ -2519,6 +2521,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group2 = group this;";
 						name="team2_2";
 						description="Contestant (Blue Barracudas)";
 						isPlayable=1;
@@ -2561,6 +2564,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group2 = group this;";
 						name="team2_3";
 						description="Contestant (Blue Barracudas)";
 						isPlayable=1;
@@ -2603,6 +2607,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group2 = group this;";
 						name="team2_4";
 						description="Contestant (Blue Barracudas)";
 						isPlayable=1;
@@ -2645,6 +2650,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group2 = group this;";
 						name="team2_5";
 						description="Contestant (Blue Barracudas)";
 						isPlayable=1;
@@ -2687,6 +2693,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group2 = group this;";
 						name="team2_6";
 						description="Contestant (Blue Barracudas)";
 						isPlayable=1;
@@ -2729,6 +2736,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group2 = group this;";
 						name="team2_7";
 						description="Contestant (Blue Barracudas)";
 						isPlayable=1;
@@ -2809,6 +2817,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="group1 = group this;";
 						name="team1_lead";
 						description="Team Leader (Silver Snakes)";
 						isPlayable=1;
@@ -2851,6 +2860,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group1 = group this;";
 						name="team1_1";
 						description="Contestant (Silver Snakes)";
 						isPlayer=1;
@@ -2894,6 +2904,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group1 = group this;";
 						name="team1_2";
 						description="Contestant (Silver Snakes)";
 						isPlayable=1;
@@ -2936,6 +2947,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group1 = group this;";
 						name="team1_3";
 						description="Contestant (Silver Snakes)";
 						isPlayable=1;
@@ -2978,6 +2990,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group1 = group this;";
 						name="team1_4";
 						description="Contestant (Silver Snakes)";
 						isPlayable=1;
@@ -3021,6 +3034,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group1 = group this;";
 						name="team1_5";
 						description="Contestant (Silver Snakes)";
 						isPlayable=1;
@@ -3063,6 +3077,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group1 = group this;";
 						name="team1_6";
 						description="Contestant (Silver Snakes)";
 						isPlayable=1;
@@ -3105,6 +3120,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group1 = group this;";
 						name="team1_7";
 						description="Contestant (Silver Snakes)";
 						isPlayable=1;
@@ -3184,6 +3200,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="group3 = group this;";
 						name="team3_lead";
 						description="Team Leader (Green Monkeys)";
 						isPlayable=1;
@@ -3226,6 +3243,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group3 = group this;";
 						description="Contestant (Green Monkeys)";
 						isPlayable=1;
 					};
@@ -3245,6 +3263,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group3 = group this;";
 						description="Contestant (Green Monkeys)";
 						isPlayable=1;
 					};
@@ -3264,6 +3283,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group3 = group this;";
 						description="Contestant (Green Monkeys)";
 						isPlayable=1;
 					};
@@ -3282,6 +3302,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group3 = group this;";
 						description="Contestant (Green Monkeys)";
 						isPlayable=1;
 					};
@@ -3300,6 +3321,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group3 = group this;";
 						description="Contestant (Green Monkeys)";
 						isPlayable=1;
 					};
@@ -3319,6 +3341,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group3 = group this;";
 						description="Contestant (Green Monkeys)";
 						isPlayable=1;
 					};
@@ -3338,6 +3361,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group3 = group this;";
 						description="Contestant (Green Monkeys)";
 						isPlayable=1;
 					};
@@ -3614,6 +3638,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="group4 = group this;";
 						name="team4_lead";
 						description="Team Leader (Orange Iguanas)";
 						isPlayable=1;
@@ -3657,6 +3682,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group4 = group this;";
 						name="team4_1";
 						description="Contestant (Orange Iguanas)";
 						isPlayable=1;
@@ -3699,6 +3725,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group4 = group this;";
 						name="team4_2";
 						description="Contestant (Orange Iguanas)";
 						isPlayable=1;
@@ -3741,6 +3768,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group4 = group this;";
 						name="team4_3";
 						description="Contestant (Orange Iguanas)";
 						isPlayable=1;
@@ -3784,6 +3812,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group4 = group this;";
 						name="team4_4";
 						description="Contestant (Orange Iguanas)";
 						isPlayable=1;
@@ -3826,6 +3855,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group4 = group this;";
 						name="team4_5";
 						description="Contestant (Orange Iguanas)";
 						isPlayable=1;
@@ -3869,6 +3899,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group4 = group this;";
 						name="team4_6";
 						description="Contestant (Orange Iguanas)";
 						isPlayable=1;
@@ -3911,6 +3942,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
+						init="group4 = group this;";
 						name="team4_7";
 						description="Contestant (Orange Iguanas)";
 						isPlayable=1;
