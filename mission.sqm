@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=508;
+		nextID=509;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=6;
+		nextID=10;
 	};
 	class Camera
 	{
-		pos[]={-9.631628,30.670244,101.33714};
-		dir[]={-0.68223232,-0.50670809,0.52730572};
-		up[]={-0.40097275,0.86207104,0.30991822};
-		aside[]={0.61160505,-1.2525124e-006,0.79130262};
+		pos[]={133.53741,170.81273,-253.90341};
+		dir[]={-0.23810813,-0.63693142,0.73339468};
+		up[]={-0.19669932,0.77086687,0.60585946};
+		aside[]={0.95123881,-1.8013525e-006,0.30883446};
 	};
 };
 binarizationWanted=0;
@@ -3401,11 +3401,11 @@ class Mission
 		class Item87
 		{
 			dataType="Trigger";
-			position[]={-12.111742,26.764484,-98.347763};
+			position[]={-12.112,26.764486,-98.348};
 			class Attributes
 			{
 				name="defuse_trigger";
-				condition="phoneCount = 0; " \n " " \n "{ " \n "  unit = _x; " \n "  { " \n "    if (_x == ""ACE_Cellphone"") then { " \n "      phoneCount = phoneCount + 1; " \n "    }; " \n "  } forEach items unit; " \n "} forEach thisList; " \n " " \n "phoneCount >= 4;";
+				condition="if (isNil ""num_phones"") then { " \n "    false; " \n "} else { " \n "    phoneCount = 0; " \n " " \n "    { " \n "      unit = _x; " \n "      { " \n "        if (_x == ""ACE_Cellphone"") then { " \n "          phoneCount = phoneCount + 1; " \n "        }; " \n "      } forEach items unit; " \n "    } forEach thisList; " \n " " \n "    phoneCount >= num_phones; " \n "};";
 				sizeA=5;
 				sizeB=5;
 				activationBy="ANY";

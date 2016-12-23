@@ -276,6 +276,25 @@ tileScript = [WIDTH, HEIGHT, mazePos, wallLength] execVM "init_tiles.sqf";
 waitUntil { scriptDone tileScript };
 
 
+
+// Wait for players to spawn
+if (isNil "_grp1") then {
+    waitUntil {
+        sleep 3;
+        _grp1 = missionNamespace getVariable ["group1", grpNull];
+        _grp2 = missionNamespace getVariable ["group2", grpNull];
+        _grp3 = missionNamespace getVariable ["group3", grpNull];
+        _grp4 = missionNamespace getVariable ["group4", grpNull];
+        count (units _grp1) > 0
+            or count (units _grp2) > 0
+            or count (units _grp3) > 0
+            or count (units _grp4) > 0;
+    };
+};
+sleep 3;
+
+
+
 /*
  * Initialize players and move them to their starting positions
  */
@@ -336,6 +355,8 @@ for "_g" from 0 to count _leads - 1 do {
     // Add "bomb code" (cell phone) to group lead
     (_leads select _g) addItemToUniform "ACE_Cellphone";
 };
+
+num_phones = count _leads;
 
 
 /*
