@@ -25,8 +25,8 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "Legends of the Hidden Temple v0.1";
-onLoadMission = "Kill the other teams, get their cell phones, then defuse the bomb!";
+onLoadName = "Legends of the Hidden Temple";
+onLoadMission = "Search for weapons and vehicles. Be the last team standing.";
 author = "shoffing";
 loadScreen = "maze.jpg";
 
@@ -73,8 +73,8 @@ disabledAI = true;
 
 corpseManagerMode = 1;
 corpseLimit = 15;
-corpseRemovalMinTime = 60; //seconds
-corpseRemovalMaxTime = 300; //seconds
+corpseRemovalMinTime = 300; //seconds
+corpseRemovalMaxTime = 600; //seconds
 
 // ============================================================================================
 
@@ -133,6 +133,15 @@ class cfgNotifications
 		priority = 5;
 	};
 
+	// Notification for the F3 Mapclick Supply Drop component
+	class MapClickSupplyDrop {
+		title= "NOTE";
+		description= "%1";
+		iconPicture = "\A3\ui_f\data\map\markers\military\start_ca.paa";
+		duration = 3;
+		priority = 5;
+	};
+
 	// Notification for the F3 JIP Component
 	class JIP {
 		title= "REINFORCEMENTS";
@@ -157,56 +166,56 @@ class Params
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // WARNING: DO NOT DISABLE THIS COMPONENT
 
-	class f_param_debugMode
-	{
-			title = "$STR_f_param_debugMode";
-			values[] = {0,1};
-			texts[] = {"Off","On"};
-			default = 0;
-			code = "f_var_debugMode = %1";
-	};
+    class f_param_debugMode
+    {
+            title = "$STR_f_param_debugMode";
+            values[] = {0,1};
+            texts[] = {"Off","On"};
+            default = 0;
+            code = "f_var_debugMode = %1";
+    };
 
 // ============================================================================================
 
 // F3 - Folk Assign Gear Script
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-	class f_param_backpacks
-	{
-			title = "$STR_f_param_loadouts";
-			values[] = {0,1,2};
-			texts[] = {"Light","Medium","Heavy"};
-			default = 1;
-			code = "f_param_backpacks = %1";
-	};
+    class f_param_backpacks
+    {
+            title = "$STR_f_param_loadouts";
+            values[] = {0,1,2};
+            texts[] = {"Light","Medium","Heavy"};
+            default = 1;
+            code = "f_param_backpacks = %1";
+    };
 
 // ============================================================================================
 
 // F3 - Radio Systems Support
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-	class f_param_radios
-	{
-			title = "Radio System";
-			values[] = {0,1,2,3};
-			texts[] = {"Off","ACRE","TFR","ACRE2"};
-			default = 2;
-			code = "f_var_radios = %1";
-	};
+    class f_param_radios
+    {
+            title = "Radio System";
+            values[] = {0,1,2,3};
+            texts[] = {"Off","ACRE","TFR","ACRE2"};
+            default = 2;
+            code = "f_var_radios = %1";
+    };
 
 // ============================================================================================
 
 // F3 - Medical Systems Support
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-	class f_param_medical
-	{
-			title = "Medical System";
-			values[] = {0,1,2,3};
-			texts[] = {"Arma 3 Default (Autodetect)","F3 Simple Wounding System","Force ACE3 Simple","Force ACE3 Advanced"};
-			default = 2;
-			code = "f_var_medical = %1";
-	};
+    class f_param_medical
+    {
+            title = "Medical System";
+            values[] = {0,1,2,3};
+            texts[] = {"Arma 3 Default (Autodetect)","F3 Simple Wounding System","Force ACE3 Simple","Force ACE3 Advanced"};
+            default = 2;
+            code = "f_var_medical = %1";
+    };
 
 // F3 - ACE3 Support
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
@@ -222,24 +231,22 @@ class Params
 
 // ============================================================================================
 
-	
+
 // ============================================================================================
 
 // F3 - Mission Timer/Safe Start
 // Credits: Please see the F2 online manual (http://www.ferstaberinde.com/f3/en/)
 
-	class f_param_mission_timer
-	{
-			title = "$STR_f_param_mission_timer";
-			values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
-			texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-			default = 0;
-			code = "f_param_mission_timer = %1";
-	};
+    class f_param_mission_timer
+    {
+            title = "$STR_f_param_mission_timer";
+            values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
+            texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
+            default = 0;
+            code = "f_param_mission_timer = %1";
+    };
 
-
-
-	class maze_size_width
+    class maze_size_width
 	{
 		title = "Maze Width";
 		values[] = {5,10,15,20,25,30,35,40,45,50};
@@ -256,7 +263,6 @@ class Params
 		default = 20;
 		code = "param_maze_height = %1";
 	};
-
 
 // ============================================================================================
 
@@ -285,15 +291,15 @@ class Params
 		code = "f_param_fog = %1";
 	};
 
-	class f_param_timeOfDay
+    class f_param_timeOfDay
 	{
 		title = "$STR_f_param_timeOfDay";
 		values[] = {0,1,2,3,4,5,6,7};
 		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
 		default = 3;
 		function = "f_fnc_setTime";			// This function is called to apply the values
-		isGlobal = 0;						// Execute this only on the server
-		code = "f_param_timeOfDay = %1";
+ 		isGlobal = 0;						// Execute this only on the server
+ 		code = "f_param_timeOfDay = %1";
 	};
 */
 // ============================================================================================
@@ -357,7 +363,7 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "The nuke was defused!";
+		title = "Ending #1";
 		subtitle = "";
 		description = "Please post to the AAR thread!";
 		// pictureBackground = "";
@@ -367,8 +373,8 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "The nuke detonated, everybody loses!";
-		subtitle = "(except for the minotaur, I guess)";
+		title = "Ending #2";
+		subtitle = "";
 		description = "Please post to the AAR thread!";
 		// pictureBackground = "";
 		// picture = "";
@@ -486,19 +492,6 @@ class CfgFunctions
 		{
 			file="f\ace3";
 		};
-		class medical
-		{
-			file="f\medical";
-			class medicalPreInit
-			{
-				preInit = 1;
-			};
-		};
-		class setGroupID
-		{
-			file = "f\setGroupID";
-			class setGroupID{};
-		};
 		class missionConditions
 		{
 			file = "f\missionConditions";
@@ -541,6 +534,11 @@ class CfgFunctions
 			file = "f\mapClickTeleport";
 			class mapClickTeleportUnit{};
 			class mapClickTeleportGroup{};
+		};
+		class mapClickSupplyDrop
+		{
+			file = "f\mapClickSupplyDrop";
+			class mapClickSupplyDropUnit{};
 		};
 		class zeus
 		{
@@ -585,8 +583,8 @@ class CfgUnitInsignia {
 	#include "f\assignGear\insignia\define.hpp"
 };
 
-// Custom Sounds - Be advised, if you use a cfgSound in a mission, 
-// it will play until the file stops, Sounds cannot be interrupted 
+// Custom Sounds - Be advised, if you use a cfgSound in a mission,
+// it will play until the file stops, Sounds cannot be interrupted
 // unless the object playing the sound is killed or otherwise destroyed.
 // Sound files can be played in 3D, and are an effect for volume purposes.
 
@@ -599,7 +597,7 @@ class CfgUnitInsignia {
 //		name = "my_wolf_sound";
 //		// filename, volume, pitch
 //		sound[] = {"fx\wolf1.ogg", 1, 1};
-//		// subtitle delay in seconds, subtitle text 
+//		// subtitle delay in seconds, subtitle text
 //		titles[] = {1, "*wolf growls*"};
 //	};
 //};

@@ -156,10 +156,6 @@ _spawnTowers = [];
 _towerNum = 0;
 
 
-// Load center nuke models
-_nukeDomeModel = (getModelInfo ref_nuke_dome) select 1; _nukeDomeModel_hh = ((boundingBox ref_nuke_dome) select 1 select 2) - 5;
-_nukeTowerModel = (getModelInfo ref_nuke_tower) select 1; _nukeTowerModel_hh = ((boundingBox ref_nuke_tower) select 1 select 2) + 10;
-
 
 // Spawn maze
 for "_x" from 0 to WIDTH - 1 do {
@@ -172,7 +168,7 @@ for "_x" from 0 to WIDTH - 1 do {
         ];
 
 
-        _inCenter = not (_x < WIDTH/2-2 or _x > WIDTH/2+1 or _y < HEIGHT/2-2 or _y > HEIGHT/2+1);
+        _inCenter = not (_x < WIDTH/2-1 or _x > WIDTH/2 or _y < HEIGHT/2-1 or _y > HEIGHT/2);
         _inCorner = (_x == 0 and _y == 0) or (_x == 0 and _y == HEIGHT-1) or (_x == WIDTH-1 and _y == 0) or (_x == WIDTH-1 and _y == HEIGHT-1);
         _isEdge = (_x == 0 or _x == WIDTH-1 or _y == 0 or _y == HEIGHT-1);
 
@@ -181,8 +177,8 @@ for "_x" from 0 to WIDTH - 1 do {
          * WALLS
          */
 
-        // Skip spawning walls in the center, and skip spawning 10% of walls
-        if ((not _inCenter) and (_isEdge or random 100 > 10)) then {
+        // skip spawning walls in center and skip spawning 15% of walls
+        if ((not _inCenter) and (_isEdge or random 100 > 15)) then {
             _rotOffset = 0;
             if (isRot) then {
                 _rotOffset = 90;
@@ -250,31 +246,11 @@ for "_x" from 0 to WIDTH - 1 do {
 };
 
 
-// Spawn nuke stuff in center
-_pos = [
-    mazePosCenter select 0,
-    mazePosCenter select 1
-];
-defuse_trigger setPos _pos;
-createVehicle ["Land_Device_assembled_F", _pos, [], 0, "NONE"];
-
-(createVehicle ["Land_Dome_Big_F", _pos, [], 0, "NONE"]) setDir 90;
-
-_pos = ATLToASL [
-    mazePosCenter select 0,
-    mazePosCenter select 1,
-    _nukeDomeModel_hh + _nukeTowerModel_hh
-];
-createSimpleObject [_nukeTowerModel, _pos];
-
-
-
 /*
  * Create random tiles
  */
 tileScript = [WIDTH, HEIGHT, mazePos, wallLength] execVM "init_tiles.sqf";
 waitUntil { scriptDone tileScript };
-
 
 
 // Wait for players to spawn
@@ -292,7 +268,6 @@ if (isNil "_grp1") then {
     };
 };
 sleep 3;
-
 
 
 /*
@@ -319,41 +294,7 @@ for "_g" from 0 to count _leads - 1 do {
             (_towerPos select 1) + 1.5 * (sin (_u * 360 / (count _group)))
         ];
         _unit setDir -(_u * 360 / (count _group)) - 90;
-
-
-        // Give loadout
-        removeAllWeapons _unit;
-        removeAllItems _unit;
-        removeAllAssignedItems _unit;
-        removeVest _unit;
-        removeBackpack _unit;
-        removeHeadgear _unit;
-        removeGoggles _unit;
-
-        _unit addBackpack "B_AssaultPack_cbr";
-        for "_i" from 1 to 5 do {_unit addItemToBackpack "ACE_fieldDressing";};
-        for "_i" from 1 to 5 do {_unit addItemToBackpack "ACE_morphine";};
-        for "_i" from 1 to 8 do {_unit addItemToBackpack "hlc_30Rnd_762x39_t_ak";};
-        for "_i" from 1 to 3 do {_unit addItemToBackpack "ACE_M14";};
-        for "_i" from 1 to 3 do {_unit addItemToBackpack "rhs_mag_m67";};
-        _unit addHeadgear "rhsusf_mich_bare_tan";
-
-        _unit addWeapon "Binocular";
-
-        _unit addWeapon "rhs_weap_akm";
-
-        _unit linkItem "ItemMap";
-        _unit linkItem "ItemCompass";
-        _unit linkItem "ItemWatch";
-        _unit linkItem "tf_anprc152";
-
-
-        // disable ai on unit for testing
-        // _unit disableAI "ANIM";
     };
-
-    // Add "bomb code" (cell phone) to group lead
-    (_leads select _g) addItemToUniform "ACE_Cellphone";
 };
 
 num_phones = count _leads;
@@ -362,11 +303,6 @@ num_phones = count _leads;
 /*
  * Create maze markers
  */
-_nukeMarker = createMarker ["nuke", mazePosCenter];
-_nukeMarker setMarkerShape "ICON";
-_nukeMarker setMarkerType "mil_objective";
-_nukeMarker setMarkerColor "ColorRed";
-
 _mazeArea = createMarker ["maze", mazePosCenter];
 _mazeArea setMarkerShape "RECTANGLE";
 _mazeArea setMarkerSize [WIDTH * wallLength / 2, HEIGHT * wallLength / 2];
@@ -374,10 +310,18 @@ _mazeArea setMarkerColor "ColorBlack";
 _mazeArea setMarkerBrush "Grid";
 
 
-// Clean up misc spawn area stuff
+// Clean up misc spawn area stuff (like tiles, crates)
 {
     deleteVehicle _x;
 } forEach nearestObjects [cleanup, [], 200];
 
 
 };
+
+
+// Create squad makers
+["group1", "b_inf", "Silver Snakes", "ColorWhite"] spawn f_fnc_localGroupMarker;
+["group2", "b_inf", "Blue Barracudas", "ColorBlue"] spawn f_fnc_localGroupMarker;
+["group3", "b_inf", "Green Monkeys", "ColorGreen"] spawn f_fnc_localGroupMarker;
+["group4", "b_inf", "Orange Iguanas", "ColorOrange"] spawn f_fnc_localGroupMarker;
+
