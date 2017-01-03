@@ -2,9 +2,9 @@ if (isServer) then {
     
 
 WIDTH = "maze_size_width" call BIS_fnc_getParamValue;
-if (WIDTH == 0) then { WIDTH = 20; };
+if (WIDTH == 0) then { WIDTH = 25; };
 HEIGHT = "maze_size_height" call BIS_fnc_getParamValue;
-if (HEIGHT == 0) then { HEIGHT = 20; };
+if (HEIGHT == 0) then { HEIGHT = 25; };
 
 // Get maze pos info
 mazePosCenter = getPosASL maze;

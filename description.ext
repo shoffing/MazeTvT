@@ -251,7 +251,7 @@ class Params
 		title = "Maze Width";
 		values[] = {5,10,15,20,25,30,35,40,45,50};
 		texts[] = {"5","10","15","20","25","30","35","40","45","50"};
-		default = 20;
+		default = 25;
 		code = "param_maze_width = %1";
 	};
 
@@ -260,7 +260,7 @@ class Params
 		title = "Maze Height";
 		values[] = {5,10,15,20,25,30,35,40,45,50};
 		texts[] = {"5","10","15","20","25","30","35","40","45","50"};
-		default = 20;
+		default = 25;
 		code = "param_maze_height = %1";
 	};
 

@@ -6,8 +6,8 @@ params ["_WIDTH", "_HEIGHT", "_mazePos", "_wallLength"];
  */
 
 _PROB_TILE = 80;
-_PROB_VEHICLE = 35;
-_PROB_CRATE = 60;
+_PROB_VEHICLE = 40;
+_PROB_CRATE = 35;
 
 
 /*
@@ -33,7 +33,7 @@ _tile_hunting = [[["type","Land_Misc_deerstand"],["pos",[-4.20983,-2.11205]],["d
 
 _tile_playground = [[["type","Land_SlideCastle_F"],["pos",[4.20441,3.08353]],["dir",0],["height",0.00102615],["hasInventory",false],["isVehicle",false]],[["type","Land_Slide_F"],["pos",[0.489983,-6.09644]],["dir",0],["height",0.0998058],["hasInventory",false],["isVehicle",false]],[["type","Land_kolotoc"],["pos",[-3.53152,3.70242]],["dir",0],["height",0.000511169],["hasInventory",false],["isVehicle",false]],[["type","Land_kulata_prolezacka"],["pos",[-5.14729,-2.78384]],["dir",0],["height",0.000736237],["hasInventory",false],["isVehicle",false]],[["type","Box_NATO_Equip_F"],["pos",[-6.033,5.67381]],["dir",269.66],["height",3.62396e-005],["hasInventory",true],["isVehicle",false]],[["type","C_Offroad_01_F"],["pos",[0.874741,3.91149]],["dir",0.403672],["height",0.0681496],["hasInventory",true],["isVehicle",true]]];
 
-_tile_cars1 = [[["type","Land_Wreck_Ural_F"],["pos",[4.46234,-4.40546]],["dir",209.992],["height",-0.102491],["hasInventory",false],["isVehicle",false]],[["type","Land_Wreck_Car_F"],["pos",[-4.83978,4.93622]],["dir",44.9942],["height",0.0663395],["hasInventory",false],["isVehicle",false]],[["type","Land_Wreck_Van_F"],["pos",[2.17287,3.87922]],["dir",345.014],["height",0.00620461],["hasInventory",false],["isVehicle",false]],[["type","Land_RailwayCar_01_tank_F"],["pos",[-4.62285,-2.95936]],["dir",194.809],["height",0.00178528],["hasInventory",false],["isVehicle",false]],[["type","Box_NATO_Equip_F"],["pos",[2.31873,-3.5839]],["dir",209.204],["height",0.000579834],["hasInventory",true],["isVehicle",false]],[["type","O_Quadbike_01_F"],["pos",[-0.960197,-0.651154]],["dir",144.859],["height",0.206066],["hasInventory",true],["isVehicle",true]]];
+_tile_cars1 = [[["type","Land_Wreck_Ural_F"],["pos",[4.46234,-4.40546]],["dir",209.992],["height",-0.102491],["hasInventory",false],["isVehicle",false]],[["type","Land_Wreck_Car_F"],["pos",[-4.83978,4.93622]],["dir",44.9942],["height",0.0663395],["hasInventory",false],["isVehicle",false]],[["type","Land_Wreck_Van_F"],["pos",[2.17288,3.87922]],["dir",345.014],["height",0.00620461],["hasInventory",false],["isVehicle",false]],[["type","Land_RailwayCar_01_tank_F"],["pos",[-4.62285,-2.95936]],["dir",194.809],["height",0.00178528],["hasInventory",false],["isVehicle",false]],[["type","Box_NATO_Equip_F"],["pos",[2.31873,-3.5839]],["dir",209.204],["height",0.000579834],["hasInventory",true],["isVehicle",false]],[["type","O_Quadbike_01_F"],["pos",[-0.960197,-0.651146]],["dir",144.859],["height",0.206066],["hasInventory",true],["isVehicle",true]],[["type","O_Quadbike_01_F"],["pos",[-1.22292,-4.03283]],["dir",144.856],["height",0.205608],["hasInventory",true],["isVehicle",true]],[["type","O_Quadbike_01_F"],["pos",[1.96069,-0.580109]],["dir",144.859],["height",0.206081],["hasInventory",true],["isVehicle",true]]];
 _tile_cars2 = [[["type","Box_NATO_Equip_F"],["pos",[-1.52645,1.48757]],["dir",209.216],["height",0.000597],["hasInventory",true],["isVehicle",false]],[["type","Land_Wreck_CarDismantled_F"],["pos",[0.860329,3.80656]],["dir",147.787],["height",0.00605392],["hasInventory",false],["isVehicle",false]],[["type","Land_Wreck_Car_F"],["pos",[-4.49583,0.0200577]],["dir",0],["height",0.00317192],["hasInventory",false],["isVehicle",false]],[["type","Land_Wreck_Van_F"],["pos",[4.85159,-3.2385]],["dir",0],["height",0.00318146],["hasInventory",false],["isVehicle",false]],[["type","rhsgref_ins_uaz_dshkm"],["pos",[-1.87988,-5.17]],["dir",67.7276],["height",0.0564728],["hasInventory",true],["isVehicle",true]]];
 
 _tiles = [
@@ -85,45 +85,18 @@ _tiles = [
 
 
 /*
- * Set up crate configurations
+ * Set up weapon, grenade, item configurations
  */
+BAD_GUNZ = [];
+BAD_MAGZ = [];
 
-_crate1 = [["weapons",["rhs_weap_akm","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","Binocular","Binocular"]],["magazines",["rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak"]],["items",[]]];
-_crate2 = [["weapons",["rhs_weap_akm","rhsusf_weap_glock17g4","Binocular"]],["magazines",["rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","rhs_mag_m67","rhs_mag_m67"]],["items",[]]];
-_crate3 = [["weapons",["rhs_weap_akm","rhs_weap_rpg7","Binocular","Binocular","Binocular"]],["magazines",["hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","rhs_mag_m67","rhs_mag_m67","rhs_mag_m67","rhs_mag_m67","rhs_rpg7_PG7VL_mag","rhs_rpg7_PG7VL_mag"]],["items",[]]];
+_weapons = ["rhs_weap_akm","rhs_weap_akm","rhs_weap_akm","rhs_weap_akm","rhs_weap_akm","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","hlc_smg_mp5a3","hlc_rifle_M14","hgun_ACPC2_F","hgun_ACPC2_F","hgun_ACPC2_F","hgun_ACPC2_F","hgun_ACPC2_F","hgun_ACPC2_F","hgun_ACPC2_F","hgun_ACPC2_F","SAM_AK5C_NOGRIP","SAM_AK5C_NOGRIP","rhs_weap_ak104","rhs_weap_ak74m_camo_folded","rhs_weap_akms","arifle_AKS_F","rhs_weap_aks74un_folded","rhs_weap_aks74un_folded","rhs_weap_asval","rhs_weap_asval","hlc_rifle_Colt727","hlc_rifle_Colt727","hlc_rifle_Colt727","hlc_rifle_M4","hlc_rifle_M4","hlc_rifle_M4","hlc_rifle_M4","hlc_rifle_L1A1SLR","hlc_rifle_FAL5000","hlc_rifle_g3sg1","hlc_rifle_G36C","hlc_rifle_G36V","hlc_rifle_hk33a2","hlc_rifle_hk53","hlc_smg_mp5a2","hlc_smg_mp5a2","hlc_smg_mp5a2","hlc_smg_mp5a4","hlc_smg_mp5a4","hlc_smg_mp5a4","hlc_smg_MP5N","hlc_smg_MP5N","hlc_smg_MP5N","rhs_weap_hk416d10","rhs_weap_hk416d145","hlc_rifle_ak47","hlc_rifle_ak47","hlc_rifle_aks74u","hlc_rifle_rpk","rhs_weap_kar98k","rhs_weap_kar98k","rhs_weap_kar98k","UK3CB_BAF_L115A3_DE","UK3CB_BAF_L119A1","UK3CB_BAF_L128A1","UK3CB_BAF_L128A1","UK3CB_BAF_L131A1","UK3CB_BAF_L131A1","UK3CB_BAF_L131A1","UK3CB_BAF_L131A1","UK3CB_BAF_L131A1","UK3CB_BAF_L131A1","UK3CB_BAF_L131A1","UK3CB_BAF_L22","UK3CB_BAF_L92A1","LOP_Weap_LeeEnfield","LOP_Weap_LeeEnfield","LOP_Weap_LeeEnfield","LOP_Weap_LeeEnfield","LOP_Weap_LeeEnfield","LOP_Weap_LeeEnfield","LOP_Weap_LeeEnfield","rhs_weap_m21a_fold","rhs_weap_m92","RH_M16a1","rhs_weap_m16a4_carryhandle","hlc_rifle_M1903A1_unertl","hlc_rifle_M1903A1_unertl","hlc_rifle_M1903A1_unertl","hlc_rifle_M21","rhs_weap_m249_pip_S","RH_m4","RH_m4","rhsusf_weap_m9","rhsusf_weap_m9","rhsusf_weap_m9","rhsusf_weap_m9","rhsusf_weap_m9","rhsusf_weap_m9","rhsusf_weap_m9","rhsusf_weap_m9","rhsusf_weap_m9","hlc_lmg_MG42","rhs_weap_sr25","rhs_weap_m38","rhs_weap_m38","rhs_weap_m38","rhs_weap_m38","rhs_weap_m38","rhsusf_weap_MP7A1_desert","rhsusf_weap_MP7A1_desert","rhsusf_weap_MP7A1_desert","rhsusf_weap_MP7A1_desert","rhsusf_weap_MP7A1_desert","SMG_03C_black","SMG_03C_black","hgun_PDW2000_F","hgun_PDW2000_F","hgun_PDW2000_F","rhs_weap_pkm","rhs_weap_pp2000_folded","rhs_weap_pp2000_folded","rhs_weap_pp2000_folded","rhs_weap_pp2000_folded","rhs_weap_pp2000_folded","rhs_weap_pp2000_folded","hlc_rifle_augsrcarb","hlc_rifle_augsrcarb","hlc_rifle_augsrcarb","hlc_rifle_augsr_t","hlc_rifle_augsr_t","rhs_weap_svds","rhs_weap_svds","rhs_weap_vss","hgun_Pistol_heavy_02_F","hgun_Pistol_heavy_02_F","hgun_Pistol_heavy_02_F","hgun_Pistol_heavy_02_F","hgun_Pistol_heavy_02_F","hgun_Pistol_heavy_02_F","hgun_Pistol_heavy_02_F","hgun_Pistol_heavy_02_F","rhs_weap_fgm148","rhs_weap_fgm148","rhs_weap_M136","rhs_weap_M136","rhs_weap_rpg26","rhs_weap_rpg26","rhs_weap_rpg26","rhs_weap_rpg26","rhs_weap_rpg7","rhs_weap_rpg7","rhs_weap_rpg7","rhs_weap_rpg7","rhs_weap_rpg7","rhs_weap_rpg7"];
 
-_crate4 = [["weapons",["hlc_smg_mp5a3","rhs_weap_m4a1_carryhandle","Binocular","Binocular","Binocular"]],["magazines",["rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","rhs_mag_m67"]],["items",["optic_Hamr"]]];
-_crate5 = [["weapons",["hlc_smg_mp5a3","hlc_smg_mp5a3","rhs_weap_m4a1_carryhandle","Binocular"]],["magazines",["rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5"]],["items",[]]];
-_crate6 = [["weapons",["hlc_smg_mp5a3","Binocular","Binocular","Binocular","Binocular","Binocular"]],["magazines",["hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5"]],["items",[]]];
+_grenades = ["ACE_M14", "ACE_M14", "ACE_M14", "APERSBoundingMine_Range_Mag", "APERSTripMine_Wire_Mag", "ATMine_Range_Mag", "ATMine_Range_Mag", "ATMine_Range_Mag", "ClaymoreDirectionalMine_Remote_Mag", "rhs_mag_m18_green", "rhs_mag_m18_purple", "rhs_mag_m18_red", "rhs_mag_m18_yellow", "rhs_mag_m67", "rhs_mag_m67", "rhs_mag_m67", "rhs_mag_m67", "rhs_mag_m67", "rhs_mag_m67", "rhs_mag_m67", "ACE_M84", "ACE_M84", "ACE_M84", "rhs_mag_rgn", "rhs_mag_rgn", "rhs_mag_rgo", "rhs_mag_rgo"];
 
-_crate7 = [["weapons",["UK3CB_BAF_L115A3","Binocular","Binocular"]],["magazines",["UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","rhs_mag_m67","rhs_mag_m67"]],["items",["optic_LRPS"]]];
-_crate8 = [["weapons",["UK3CB_BAF_L115A3","rhs_weap_rpg7","Binocular","Binocular","Binocular"]],["magazines",["UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","UK3CB_BAF_338_5Rnd","rhs_mag_m67","rhs_rpg7_PG7VL_mag","rhs_rpg7_PG7VL_mag"]],["items",["optic_LRPS"]]];
+_equipment = ["ACE_fieldDressing","ItemGPS","ItemGPS","ItemGPS","usm_helmet_safety","usm_helmet_safety","MNP_Vest_RUMED","MNP_Vest_RUMED","ACE_morphine","ACE_morphine","SOUP_Vest_PMC_SAND_B","usm_vest_safety","usm_vest_safety"];
+_equipment_weap = ["MineDetector", "MineDetector", "Binocular", "Binocular", "Binocular", "Binocular"];
 
-_crate9 = [["weapons",["hlc_rifle_M14","Binocular","Binocular"]],["magazines",["hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14"]],["items",["hlc_optic_artel_m14"]]];
-_crate10 = [["weapons",["hlc_rifle_M14","Binocular","Binocular","Binocular"]],["magazines",["hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","hlc_20Rnd_762x51_B_M14","rhs_mag_m67","rhs_mag_m67"]],["items",["hlc_optic_artel_m14"]]];
-
-_crate11 = [["weapons",["rhs_weap_akm","rhs_weap_m4a1_carryhandle","Binocular","Binocular","Binocular"]],["magazines",["rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","rhs_mag_30Rnd_556x45_Mk318_Stanag","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","hlc_30Rnd_762x39_b_ak","rhs_mag_m67"]],["items",["optic_Hamr"]]];
-
-_crate12 = [["weapons",["rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhsusf_weap_glock17g4","rhs_weap_rpg7","Binocular","Binocular","Binocular","Binocular","Binocular"]],["magazines",["rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhsusf_mag_17Rnd_9x19_JHP","rhs_mag_m67","rhs_mag_m67","rhs_rpg7_PG7VL_mag","rhs_rpg7_PG7VL_mag"]],["items",[]]];
-
-_crate13 = [["weapons",["hlc_smg_mp5a3","hlc_smg_mp5a3","hlc_smg_mp5a3"]],["magazines",["hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5","hlc_30Rnd_9x19_B_MP5"]],["items",[]]];
-
-
-_crates = [
-    _crate1,
-    _crate2,
-    _crate3,
-    _crate4,
-    _crate5,
-    _crate6,
-    _crate7,
-    _crate8,
-    _crate9,
-    _crate10,
-    _crate11,
-    _crate12,
-    _crate13
-];
 
 
 /*
@@ -187,11 +160,50 @@ for "_x" from 0 to _WIDTH - 1 do {
                             clearMagazineCargoGlobal _propObj;
                             clearItemCargoGlobal _propObj;
 
-                            // Select random crate
-                            _crate = [_crates call BIS_fnc_selectRandom, []] call CBA_fnc_hashCreate;
-                            { _propObj addWeaponCargoGlobal [_x, 1]; } forEach ([_crate, "weapons"] call CBA_fnc_hashGet);
-                            { _propObj addMagazineCargoGlobal [_x, 1]; } forEach ([_crate, "magazines"] call CBA_fnc_hashGet);
-                            { _propObj addItemCargoGlobal [_x, 1]; } forEach ([_crate, "items"] call CBA_fnc_hashGet);
+                            // Add random weapons
+                            for "_i" from 0 to (floor random (4 + 1)) do {
+                                _addWeapon = _weapons call BIS_fnc_selectRandom;
+
+                                // Add random mags for weapon
+                                _weaponMags = getArray (configFile >> "CfgWeapons" >> _addWeapon >> "magazines");
+                                if (count _weaponMags > 0) then {
+                                    _propObj addWeaponCargoGlobal [_addWeapon, 1];
+
+                                    _mag = _weaponMags call BIS_fnc_selectRandom;
+                                    for "_j" from 1 to (8 + (floor random (8 + 1))) do {
+                                        if (isClass (configFile >> "CfgMagazines" >> _mag)) then {
+                                            _propObj addMagazineCargoGlobal [_mag, 1];
+                                        } else {
+                                            BAD_MAGZ pushBackUnique [_addWeapon, _mag];
+                                        };
+                                    };
+                                } else {
+                                    BAD_GUNZ pushBackUnique [_addWeapon];
+                                };
+                            };
+
+                            // Add random explosives / grenades and stuff
+                            for "_i" from 1 to (floor random (5 + 1)) do {
+                                _addGrenade = _grenades call BIS_fnc_selectRandom;
+                                _propObj addMagazineCargoGlobal [_addGrenade, 1];
+                            };
+
+                            // Add random equipment
+                            for "_i" from 1 to (floor random (10 + 1)) do {
+                                _addEquip = _equipment call BIS_fnc_selectRandom;
+                                _propObj addItemCargoGlobal [_addEquip, 1];
+                            };
+
+                            // Add random equipment that are actually weapons
+                            for "_i" from 1 to (floor random (4 + 1)) do {
+                                _addEquip = _equipment_weap call BIS_fnc_selectRandom;
+                                _propObj addItemCargoGlobal [_addEquip, 1];
+                            };
+
+                            // Add backpacks to half the crates
+                            if (random 2 < 1) then {
+                                _propObj addBackpackCargoGlobal ["B_Carryall_ocamo", floor random 4];
+                            };
                         };
 
                         // Unlock vehicle
